@@ -1,0 +1,48 @@
+.oppet-list {
+	display: none;
+
+	ul {
+		display: table;
+		margin-bottom: 1.5882352941em;
+		background-color: #fff;
+		border: 1px solid #e5e2db;
+		position: relative;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	    min-width: 340px;
+
+	    @media (max-width:767px) {
+    		width: 100%;
+		    min-width: 100%;
+	    }
+
+		li {
+		    display: table-row;
+
+		    &:last-child {
+		    	span {
+		    		border-bottom: 0;
+		    	}
+		    }
+		    &:nth-child(odd) {
+		    	background: #fbf7fd;
+		    }
+
+			span {
+				padding: 10px;
+				display: table-cell;
+				text-transform: capitalize;
+    			border-bottom: 1px solid #e5e2db;
+
+    			&:last-child {
+    				text-align: right;
+    			}
+
+				@media (max-width:767px) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

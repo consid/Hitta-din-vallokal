@@ -1,0 +1,49 @@
+/* Jumbotron */
+.jumbotron {
+	margin-bottom: 0;
+	position: relative;
+
+	&.secondary {
+		background: #5d237d;
+		color: #fff;
+		margin-bottom: 0;
+
+		h2 {
+			color: #fff;
+			font-weight: 700;
+		}
+		a {
+			color: #fff;
+		}
+
+	}
+	.jumbo-bg {
+		font-size: 25rem;
+		position: absolute;
+		top: 0;
+		right: 0;
+	    transform: rotate(-5deg);
+	}
+	p {
+		@media (max-width:767px) {
+			font-size: 16px;
+		}
+	}
+	h1 {
+		
+		&.vallokal-title {
+			margin-bottom: 90px;
+
+			@media (max-width:767px) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+ul {
+	&.list {
+		li {
+			margin-bottom: 10px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.results {
+	.search-results {
+		.jumbotron {
+			margin-top: -24px;
+			background: #fff;
+		    padding-top: 30px;
+    		padding-bottom: 30px;
+		}
+	}
+	.form-group {
+		margin-bottom: 24px;
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	
+	.map {
+		margin-top: 48px;
+	}
+}

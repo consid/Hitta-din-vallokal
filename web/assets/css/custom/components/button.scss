@@ -1,0 +1,42 @@
+/* button */
+.btn {
+    white-space: normal;
+    text-align: left;
+}
+
+.btn-header {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	text-align: left;
+
+	&.icon-arrow-left-light {
+		background-position: 8px;
+	}
+}
+
+.btn-clean {
+	padding: 0;
+	margin-bottom: 5px;
+	color: #444;
+
+	&:hover {
+		color: #444;
+	}
+
+	&.icon {
+		padding-right: 30px;
+		background-position: right 0px;
+	}
+}
+
+.popover{
+    max-width: 100%;
+}
+
+	
+@media (max-width:380px) {
+	.btn-lg {
+		font-size: 15px;
+	}
+}

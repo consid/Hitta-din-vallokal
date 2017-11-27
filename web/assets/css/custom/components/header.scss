@@ -1,0 +1,15 @@
+/* Header */
+
+header {
+	&.site-header {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		position: relative;
+		display: block;
+
+		@media (max-width:767px) {
+	        padding-top: 15px;
+			padding-bottom: 15px;
+	    }
+	}
+}
