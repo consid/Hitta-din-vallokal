@@ -94,9 +94,6 @@
                     <div id="lng" class="hidden">{{valLng}}</div>
 
                 </div>
-                
-                <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeZE6vHYMK_x5l8OPVnjoKgg27YtCpUk8&callback=initMap" async defer></script> -->
-                <script type="text/javascript" src="assets/js/data/googlemaps-valdagen.js?RostaVersionString"></script>
 
             </script>
 

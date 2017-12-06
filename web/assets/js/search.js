@@ -79,7 +79,7 @@ $( function() {
 				}
 			},
 			select: function( event , ui ) {
-				
+				$.getScript("assets/js/data/googlemaps-valdagen.js");
 				$.ajax({
 				  url: "https://api-url-here.azurewebsites.net/api/vallokal/valdagen/" + ui.item.lokalId,
 				  dataType: 'json',
