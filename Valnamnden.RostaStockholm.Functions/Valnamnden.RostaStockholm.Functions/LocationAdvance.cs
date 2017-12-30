@@ -22,7 +22,7 @@ namespace Valnamnden.RostaStockholm.Functions
         /// <param name="log"></param>
         /// <returns></returns>
         [FunctionName("VallokalerFortid")]
-        public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "vallokal/fortid")]HttpRequestMessage req, [Table("VallokalerFortid", Connection = "RostaStorage")]IQueryable<LocationEntity> inTable, TraceWriter log)
+        public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "vallokal/fortid")]HttpRequestMessage req, [Table("LokalerFortid", Connection = "RostaStorage")]IQueryable<LocationEntity> inTable, TraceWriter log)
         {
             CultureInfo Culture = new CultureInfo("sv-SE");
             if (req.GetQueryString("lang") == "en")
