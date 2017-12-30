@@ -86,25 +86,42 @@ namespace Valnamnden.RostaStockholm.Functions
         {
             Dictionary<string, object> dates = new Dictionary<string, object>();
             var tid = data.Split('/');
-            var start = DateTime.Parse(tid[0]);
-            var end = DateTime.Parse(tid[1]);
-
-            //If the opening hours has passed , return null
-            if (end.Date < DateTime.Now.Date)
-                return null;
-
-            //If the polling station have no opening hours for a date return the text "Closed"
-            dates.Add("datum", start.ToString("dddd d MMMM", culture));
-            if ((start.ToString("HH:mm") == "00:00") && (end.ToString("HH:mm") == "00:00"))
+            DateTime start;
+            DateTime end;
+            try
+            {
+                start = DateTime.Parse(tid[0]);
+                end = DateTime.Parse(tid[1]);
+                //If the opening hours has passed , return null
+                if (end.Date < DateTime.Now.Date)
+                    return null;
+                //If the polling station have no opening hours for a date return the text "Closed"
+                dates.Add("datum", start.ToString("dddd d MMMM", culture));
+                if ((start.ToString("HH:mm") == "00:00") && (end.ToString("HH:mm") == "00:00"))
+                {
+                    if (culture.Name == "sv-SE")
+                        dates.Add("tid", "Stängt");
+                    else
+                        dates.Add("tid", "Closed");
+                }
+                else
+                    dates.Add("tid", start.ToString("HH:mm", culture) + "-" + end.ToString("HH:mm", culture));
+                dates.Add("idag", (start.Date == DateTime.Today));
+            }
+            //If we cant get a date return no text
+            catch
             {
                 if (culture.Name == "sv-SE")
-                    dates.Add("tid", "Stängt");
+                {
+                    dates.Add("datum", "");
+                    dates.Add("tid", "");
+                }
                 else
-                    dates.Add("tid", "Closed");
+                {
+                    dates.Add("datum", "");
+                    dates.Add("tid", "");
+                }
             }
-            else
-                dates.Add("tid", start.ToString("HH:mm", culture) + "-" + end.ToString("HH:mm", culture));
-            dates.Add("idag", (start.Date == DateTime.Today));
             return dates;
         }
 
