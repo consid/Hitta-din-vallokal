@@ -1,0 +1,1 @@
+$.getScript("assets/js/data/googlemaps-fortidsrosta.js");

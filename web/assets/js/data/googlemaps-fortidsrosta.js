@@ -1,6 +1,13 @@
+$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAeZE6vHYMK_x5l8OPVnjoKgg27YtCpUk8&callback", function(data, textStatus, jqxhr) {
+// console.log(data); //data returned
+// console.log(textStatus); //success
+// console.log(jqxhr.status); //200
+// console.log('Load was performed.');
+});
+
 var markers = [];
 
-window.onload = function () {
+window.onload = setTimeout(function () {
 
     if ($('html').hasClass('en')) {
         $.ajax({
@@ -14,7 +21,7 @@ window.onload = function () {
             error: function () {
 
             }
-        }); 
+        });
     }
     else
     {
@@ -31,7 +38,7 @@ window.onload = function () {
             }
         });
     }
-}
+}, 200);
 
 function LoadMap() {
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -74,10 +81,10 @@ function LoadMap() {
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(myPlace);
         bounds.extend(Item_1);
-        
+
         //set zoom
         google.maps.event.addListener(map, 'zoom_changed', function() {
-            zoomChangeBoundsListener = 
+            zoomChangeBoundsListener =
                 google.maps.event.addListener(map, 'bounds_changed', function(event) {
                     if (this.getZoom() > 14 && this.initialZoom == true) {
                         // Change max/min zoom here
@@ -138,7 +145,7 @@ function LoadMap() {
 
                 //If we have an open polling station today set the text to open and show the open hours
                 for (var i = 0; i < data.oppettider.length; i++) {
-                    
+
                     tider.push('<li>' + '<span>' + data.oppettider[i].datum + '</span><span>' + data.oppettider[i].tid + '</span></li>');
 
                     $(".oppet-list").html('<ul>' + tider.join('') + '</ul>');
@@ -169,7 +176,7 @@ function LoadMap() {
                     scrollTop: (divBot - wHeight)
                 }, 500);
 
-                   
+
             });
         })(marker, data);
     }
@@ -229,17 +236,17 @@ function LoadMap() {
 
             var myPlace = new google.maps.LatLng(pos.lat, pos.lng);
             var closestMarker = new google.maps.LatLng(markers[closest].lat, markers[closest].lng);
-            
+
 
             var bounds = new google.maps.LatLngBounds();
-           
+
             bounds.extend(myPlace);
 
             bounds.extend(closestMarker);
 
-            // // Set Zoom of fitBounds, 
+            // // Set Zoom of fitBounds,
             // google.maps.event.addListener(map, 'zoom_changed', function() {
-            //     zoomChangeBoundsListener = 
+            //     zoomChangeBoundsListener =
             //         google.maps.event.addListener(map, 'bounds_changed', function(event) {
             //             if (this.getZoom() > 14 && this.initialZoom == true) {
             //                 // Change max/min zoom here
@@ -252,11 +259,11 @@ function LoadMap() {
             // map.initialZoom = true;
             // Set Zoom of fitBounds Ends here //
 
-            
+
             // zoom out
-            var listener = google.maps.event.addListener(map, "idle", function() { 
-                if (map.getZoom() > 14) map.setZoom(14); 
-                google.maps.event.removeListener(listener); 
+            var listener = google.maps.event.addListener(map, "idle", function() {
+                if (map.getZoom() > 14) map.setZoom(14);
+                google.maps.event.removeListener(listener);
             });
 
             map.fitBounds(bounds);
@@ -265,11 +272,10 @@ function LoadMap() {
                 var oldZoom = map.getZoom();
                 map.setZoom(oldZoom - 1); //Or whatever
             });
-     
-            
-        }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
 
+
+        }, function() {
+            //Browser does not allow current position
         });
     } else {
         // Browser doesn't support Geolocation

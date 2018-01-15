@@ -1,9 +1,11 @@
 // Förtidsrösta
 var fortidsrostaInfo = $('#fortidsrosta-template').html();
 
+
 var fortidsrostaTemplate = Handlebars.compile(fortidsrostaInfo);
 
 function getFortidsrostaInfo() {
+
 	if ($('html').hasClass('')) {
 
 		var fortidsrostaData = fortidsrostaTemplate({
@@ -39,8 +41,10 @@ function getFortidsrostaInfo() {
 		$('#fortidsrosta-data').html(fortidsrostaData);
 
 	}
+
 }
 getFortidsrostaInfo();
+
 
 $('#languageDropdown').click(function() {
 	getFortidsrostaInfo();

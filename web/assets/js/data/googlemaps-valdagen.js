@@ -83,8 +83,7 @@ function initMap() {
             map.fitBounds(bounds);
             
         }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-
+            //Browser does not allow current position
         });
     } else {
     // Browser doesn't support Geolocation

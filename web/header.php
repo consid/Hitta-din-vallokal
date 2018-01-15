@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="//font.stockholm.se/css/stockholm-type.css?RostaVersionString" media="all">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600&subset=latin" media="all">
     <link rel="stylesheet" href="assets/icons/icons.data.svg.css?RostaVersionString" media="all">
+
+    <script type="text/javascript" src="assets/js/vendor/jquery.min.js?RostaVersionString"></script>
 </head>
 <body>
 	<div class="container" role="main">

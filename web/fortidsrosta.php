@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
-                                
+
                                 <a href="#" style="cursor: pointer" class="btn btn-clean icon icon-information-norrmalm u-icon-right remove-title" tabindex="0" role="button" data-toggle="popover" data-placement="top" data-trigger="manual" data-content="{{fortidsrostaInfo}}" data-original-title="" data-html="true" data-title="<button type='button' id='close' class='close' onclick='closePopover()'>&times;</button>">
                                     <label>{{label}}</label>
                                 </a>
@@ -68,9 +68,7 @@
                     </div>
                 </div>
             </script>
-
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeZE6vHYMK_x5l8OPVnjoKgg27YtCpUk8&callback"></script>
-            <script type="text/javascript" src="assets/js/data/googlemaps-fortidsrosta.js?RostaVersionString"></script>
+            <script type="text/javascript" src="assets/js/data/googlemaps-fortidsrosta-get.js?RostaVersionString"></script>
 
         </div>
     </div>
